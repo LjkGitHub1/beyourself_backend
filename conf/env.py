@@ -30,7 +30,7 @@ TABLE_PREFIX = "admin_"
 # ================================================= #
 REDIS_DB = 1
 CELERY_BROKER_DB = 3
-REDIS_PASSWORD = 'xxxxxx'
+REDIS_PASSWORD = '123456'
 REDIS_HOST = '127.0.0.1'
 REDIS_URL = f'redis://:{REDIS_PASSWORD or ""}@{REDIS_HOST}:6379'
 # ================================================= #

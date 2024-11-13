@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     "channels",
     "dvadmin.system",
     "dvadmin.evaluate",
-    "storages",
+    # "storages",
 ]
 
 # 腾讯COS配置
