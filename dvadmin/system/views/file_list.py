@@ -29,9 +29,9 @@ class FileSerializer(CustomModelSerializer):
         file_engine = dispatch.get_system_config_values("fileStorageConfig.file_engine") or 'local'
         file_backup = dispatch.get_system_config_values("fileStorageConfig.file_backup")
         file = self.initial_data.get('file')
-        if file is None:
-            print(self.initial_data)
-            return super().create(self.initial_data)
+        # if file is None:
+        #     print(self.initial_data)
+        #     return super().create(self.initial_data)
         file_size = file.size
         # name = self.initial_data.get['name']
         # if self.initial_data.get('name'):

@@ -65,12 +65,12 @@ INSTALLED_APPS = [
 ]
 
 # 腾讯COS配置
-COS_REGION = 'ap-guangzhou'  # 区域名称
-COS_BUCKET = 'ljk-1304400762'  # COS桶名称
-COS_SECRET_ID = 'your-secret-id'  # 腾讯云账户的Secret ID
-COS_SECRET_KEY = 'your-secret-key'  # 腾讯云账户的Secret Key
-
-DEFAULT_FILE_STORAGE = 'storages.backends.cos.COSStorage'  # 使用腾讯COS作为默认存储后端
+# COS_REGION = 'ap-guangzhou'  # 区域名称
+# COS_BUCKET = 'ljk-1304400762'  # COS桶名称
+# COS_SECRET_ID = 'your-secret-id'  # 腾讯云账户的Secret ID
+# COS_SECRET_KEY = 'your-secret-key'  # 腾讯云账户的Secret Key
+#
+# DEFAULT_FILE_STORAGE = 'storages.backends.cos.COSStorage'  # 使用腾讯COS作为默认存储后端
 
 MIDDLEWARE = [
     "dvadmin.utils.middleware.HealthCheckMiddleware",

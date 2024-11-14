@@ -18,7 +18,7 @@ Mysql >= 5.7.0 (可选，默认数据库sqlite3，推荐8.0版本)
 
 2. 安装依赖环境: pip3 install -r requirements.txt
 
-3. 执行迁移命令: python3 manage.py makemigrationspython3 manage.py migrate
+3. 执行迁移命令: python3 manage.py makemigrations python3 manage.py migrate
 
 4. 初始化数据: python3 manage.py init
 
