@@ -1,10 +1,9 @@
 import hashlib
 import mimetypes
 
-from django.contrib.messages import success
+import django_filters
 from rest_framework import serializers
 from rest_framework.decorators import action
-from twisted.mail.pop3 import successResponse
 
 from application import dispatch
 from dvadmin.system.models import FileList
@@ -17,25 +16,18 @@ class FileSerializer(CustomModelSerializer):
     url = serializers.SerializerMethodField(read_only=True)
 
     def get_url(self, instance):
-        # return 'media/' + str(instance.url)
-        return instance.file_url or (f'media/{str(instance.url)}')
+        base_url = f"{self.request.scheme}://{self.request.get_host()}/"
+        return base_url + (instance.file_url or (f'media/{str(instance.url)}'))
 
     class Meta:
         model = FileList
         fields = "__all__"
 
     def create(self, validated_data):
-        print('self.initial_data.get',self.initial_data.get('file'))
         file_engine = dispatch.get_system_config_values("fileStorageConfig.file_engine") or 'local'
         file_backup = dispatch.get_system_config_values("fileStorageConfig.file_backup")
         file = self.initial_data.get('file')
-        # if file is None:
-        #     print(self.initial_data)
-        #     return super().create(self.initial_data)
         file_size = file.size
-        # name = self.initial_data.get['name']
-        # if self.initial_data.get('name'):
-        #     validated_data['name'] = name or str(file)
         validated_data['name'] = str(file)
         validated_data['size'] = file_size
         md5 = hashlib.md5()
@@ -44,9 +36,8 @@ class FileSerializer(CustomModelSerializer):
         validated_data['md5sum'] = md5.hexdigest()
         validated_data['engine'] = file_engine
         validated_data['mime_type'] = file.content_type
-        # if file_engine == 'local':
-        #     file_path = 'localhost:8000:/media/'+file.url
-        #     validated_data['file_url'] = file_path
+        ft = {'image': 0, 'video': 1, 'audio': 2}.get(file.content_type.split('/')[0], None)
+        validated_data['file_type'] = 3 if ft is None else ft
         if file_backup:
             validated_data['url'] = file
         if file_engine == 'oss':
@@ -65,17 +56,30 @@ class FileSerializer(CustomModelSerializer):
                 raise ValueError("上传失败")
         else:
             validated_data['url'] = file
-        print('url', validated_data['url'] )
         # 审计字段
         try:
             request_user = self.request.user
-            print('request_user', request_user)
             validated_data['dept_belong_id'] = request_user.dept.id
             validated_data['creator'] = request_user.id
             validated_data['modifier'] = request_user.id
         except:
             pass
         return super().create(validated_data)
+
+
+class FileAllSerializer(CustomModelSerializer):
+    class Meta:
+        model = FileList
+        fields = ['id', 'name']
+
+
+class FileFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(field_name="name", lookup_expr="icontains", help_text="文件名")
+    mime_type = django_filters.CharFilter(field_name="mime_type", lookup_expr="icontains", help_text="文件类型")
+
+    class Meta:
+        model = FileList
+        fields = ['name', 'mime_type', 'upload_method', 'file_type']
 
 
 class FileViewSet(CustomModelViewSet):
@@ -89,5 +93,9 @@ class FileViewSet(CustomModelViewSet):
     """
     queryset = FileList.objects.all()
     serializer_class = FileSerializer
-    filter_fields = ['name', ]
+    filter_class = FileFilter
     permission_classes = []
+
+    @action(methods=['GET'], detail=False)
+    def get_all(self, request):
+        return DetailResponse(data=self.get_serializer(self.get_queryset(), many=True).data)
