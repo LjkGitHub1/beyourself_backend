@@ -117,6 +117,7 @@ urlpatterns = (
             path('web/', web_view, name='web_view'),
             path('web/<path:filename>', serve_web_files, name='serve_web_files'),
             path("api/evaluate/", include("dvadmin.evaluate.urls")),
+            path("api/cognitive/", include("dvadmin.cognitiveTask.urls")),
         ]
         + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
         + static(settings.STATIC_URL, document_root=settings.STATIC_URL)

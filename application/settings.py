@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "channels",
     "dvadmin.system",
     "dvadmin.evaluate",
+    "dvadmin.cognitiveTask",
     # "storages",
 ]
 

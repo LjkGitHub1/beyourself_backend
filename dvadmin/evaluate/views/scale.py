@@ -27,6 +27,16 @@ from dvadmin.utils.viewset import CustomModelViewSet
 #         model = Scale
 #         fields = '__all__'
 
+class ResultSerializer(CustomModelSerializer):
+    """
+    测试结果-序列化器
+    """
+
+    class Meta:
+        model = Result
+        fields = "__all__"
+        read_only_fields = ["id"]
+
 class OptionSerializer(CustomModelSerializer):
     """
     选项-序列化器
@@ -93,16 +103,21 @@ class OptionViewSet(CustomModelViewSet):
     extra_filter_class = []
     search_fields = ['text']
 
-class ResultSerializer(CustomModelSerializer):
+class ResultViewSet(CustomModelViewSet):
     """
-    结果-序列化器
+    测试结果接口
+    list:查询
+    create:新增
+    update:修改
+    retrieve:单例
+    destroy:删除
     """
-
-    class Meta:
-        model = Result
-        fields = "__all__"
-        read_only_fields = ["id"]
-
+    queryset = Option.objects.all()
+    serializer_class = ResultSerializer
+    # create_serializer_class = ScaleCreateUpdateSerializer
+    # update_serializer_class = ScaleCreateUpdateSerializer
+    extra_filter_class = []
+    search_fields = ['user_id']
 
 class ScaleViewSet(CustomModelViewSet):
     """
