@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d88b30f5-fe45-4c83-8353-5869e562e64c" name="更改" comment="first commit">
       <changelist_data name="LjkGithub1" email="2279421514@qq.com" />
-      <change afterPath="$PROJECT_DIR$/dvadmin/cognitiveTask/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dvadmin/cognitiveTask/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dvadmin/cognitiveTask/views/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dvadmin/evaluate/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dvadmin/evaluate/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dvadmin/evaluate/views/scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/dvadmin/evaluate/views/scale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../beyourself.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../beyourself.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docker_env/celery/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../docker_env/celery/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../docker_env/django/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../docker_env/django/Dockerfile" afterDir="false" />
@@ -36,8 +32,14 @@
       <change beforePath="$PROJECT_DIR$/../web/src/theme/media/personal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/theme/media/personal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/src/theme/media/scrollbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/theme/media/scrollbar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/src/theme/media/tagsView.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/theme/media/tagsView.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/crud.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/crud.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/cognitiveTask/taskList/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/evaluate/components/testPage/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/evaluate/components/testPage/content.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/src/views/system/fileList/crud.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/system/fileList/crud.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/src/views/system/fileList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/system/fileList/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/system/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/system/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/views/system/log/loginLog/crud.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/views/system/log/loginLog/crud.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../web/vite.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../文档.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../文档.docx" afterDir="false" />
     </list>
@@ -81,26 +83,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django 服务器.backend.executor": "Run",
-    "Python.import os.executor": "Run",
-    "Python.mnist.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/develop/BeYourself/backend/dvadmin/cognitiveTask",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django 服务器.backend.executor&quot;: &quot;Run&quot;,
+    &quot;Python.import os.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mnist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/22794/Desktop/JD-Health-Intelligent-Triage-Text-Classification-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\develop\BeYourself\backend\dvadmin\cognitiveTask" />
@@ -248,7 +250,9 @@
       <workItem from="1731425852765" duration="145000" />
       <workItem from="1731465508873" duration="71000" />
       <workItem from="1731569011966" duration="13659000" />
-      <workItem from="1733880231076" duration="12900000" />
+      <workItem from="1733880231076" duration="17176000" />
+      <workItem from="1735094887186" duration="1238000" />
+      <workItem from="1735622897615" duration="768000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
